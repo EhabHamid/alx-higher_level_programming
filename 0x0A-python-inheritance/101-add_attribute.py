@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-""" A attribute adding module """
+"""
+    101-add_attribute: add_attribute()
+"""
 
 
-def add_attribute(a_class, name, value):
-    """ Adds a new attribute to an object if >s possible """it
-    if hasattr(a_class, "__dict__"):
-        setattr(a_class, name, value)
-    else:
+def add_attribute(cls, name, value):
+    """
+        adds a new attribute if possible.
+    """
+    if hasattr(cls, "__dict__") is False:
         raise TypeError("can't add new attribute")
+    setattr(cls, name, value)
